@@ -1,1 +1,2 @@
-export const API_URL = "http://localhost:8080/YuweLongo-Backend/api";
+// No backend URL in local prototype.
+export const API_URL=null;

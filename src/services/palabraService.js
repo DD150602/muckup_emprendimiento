@@ -1,62 +1,7 @@
-import { fetchWithAuth } from "../context/api";
-
-export async function obtenerPalabras() {
-    const res = await fetchWithAuth('/palabras');
-    if (!res.ok) throw new Error("Error al obtener palabras");
-    return res.json();
-}
-
-export async function buscarPalabra(query, tipo) {
-    const url = `/palabras?${tipo}=${encodeURIComponent(query)}`;
-    const res = await fetchWithAuth(url);
-    if (!res.ok) throw new Error("Error al buscar palabra");
-    return res.json();
-}
-
-export async function crearPalabra(data) {
-    const { idCategoria, ...palabraData } = data;
-    const url = `/palabras?idCategoria=${idCategoria}`;
-
-    const res = await fetchWithAuth(url, {
-        method: "POST",
-        body: JSON.stringify(palabraData),
-    });
-    if (!res.ok) throw new Error("Error al crear palabra");
-    return res.json();
-}
-
-export async function actualizarPalabra(data) {
-    if (!data.idPalabra) {
-        throw new Error("El ID de la palabra es requerido para actualizar.");
-    }
-    const { idPalabra, idCategoria, ...palabraData } = data;
-
-    let url = `/palabras/${idPalabra}`;
-    if (idCategoria) {
-        url += `?idCategoria=${idCategoria}`;
-    }
-    
-    const res = await fetchWithAuth(url, {
-        method: "PUT",
-        body: JSON.stringify(palabraData),
-    });
-    if (!res.ok) throw new Error("Error al actualizar la palabra");
-    return res.json();
-}
-
-export async function eliminarPalabra(idPalabra) {
-    const res = await fetchWithAuth(`/palabras/${idPalabra}`, {
-        method: "DELETE",
-    });
-    if (!res.ok) throw new Error("Error al eliminar la palabra");
-    return res.json();
-}
-
-export async function obtenerPalabrasPorCategoria(idCategoria) {
-    const res = await fetchWithAuth(`/palabras/categoria/${idCategoria}`);
-    if (res.status === 404) {
-        return [];
-    }
-    if (!res.ok) throw new Error("Error al obtener palabras por categoría");
-    return res.json();
-}
+import {readDb,updateCollection,nextId} from "./localStore";
+export async function obtenerPalabras(){const d=readDb();return d.palabras.map(x=>({...x,categoria:d.categorias.find(c=>String(c.idCategoria)===String(x.idCategoria))}))}
+export async function buscarPalabra(q,t="palabraNasa"){return readDb().palabras.filter(x=>String(x[t]||"").toLowerCase().includes(q.toLowerCase()))}
+export async function crearPalabra(d){const x={...d,idPalabra:nextId(readDb().palabras,"idPalabra")};updateCollection("palabras",a=>[...a,x]);return x}
+export async function actualizarPalabra(d){let o;updateCollection("palabras",a=>a.map(x=>{if(String(x.idPalabra)===String(d.idPalabra)){o={...x,...d};return o}return x}));return o}
+export async function eliminarPalabra(id){updateCollection("palabras",a=>a.filter(x=>String(x.idPalabra)!==String(id)));return {success:true}}
+export async function obtenerPalabrasPorCategoria(id){const d=readDb();return d.palabras.filter(x=>String(x.idCategoria)===String(id)).map(x=>({...x,categoria:d.categorias.find(c=>String(c.idCategoria)===String(x.idCategoria))}))}

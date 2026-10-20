@@ -1,8 +1,7 @@
-import React from 'react';
 import './AdminCategoriaCard.css';
 
 const AdminCategoriaCard = ({ category, onEdit, onDelete, loading }) => {
-    const placeholderImage = 'https://via.placeholder.com/300x200.png?text=Sin+Imagen';
+    const placeholderImage = '/logo512.png';
 
     return (
         <div className="col admin-category-card-enter mb-3">
@@ -26,7 +25,8 @@ const AdminCategoriaCard = ({ category, onEdit, onDelete, loading }) => {
                         </div>
                         <div className="card-footer bg-transparent border-top-0 pt-0 pb-1">
                             <div className="d-flex justify-content-end gap-3">
-                                <button
+                  <button
+                    type='button'
                                     className="btn btn-link text-warning p-0"
                                     onClick={() => onEdit(category)}
                                     disabled={loading}
@@ -34,7 +34,8 @@ const AdminCategoriaCard = ({ category, onEdit, onDelete, loading }) => {
                                 >
                                     <i className="bi bi-pencil-fill"></i>
                                 </button>
-                                <button
+                  <button
+                    type='button'
                                     className="btn btn-link text-danger p-0"
                                     onClick={() => onDelete(category)}
                                     disabled={loading}

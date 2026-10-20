@@ -1,16 +1,2 @@
-import { uploadFileToFirebase, deleteFileFromFirebase } from "./firebaseService";
-
-export async function subirArchivo(file, folder) {
-    if (!(file instanceof File)) {
-        throw new Error("El objeto proporcionado no es un archivo válido.");
-    }
-    return await uploadFileToFirebase(file, folder);
-}
-
-export async function eliminarArchivo(filePath) {
-    if (!filePath || typeof filePath !== 'string') {
-        console.warn("Se intentó eliminar un archivo sin una ruta válida.");
-        return;
-    }
-    await deleteFileFromFirebase(filePath);
-}
+export async function subirArchivo(file,folder){if(!(file instanceof File))throw Error("Archivo inválido");const url=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(file)});return {url,filePath:"local/"+folder+"/"+file.name}}
+export async function eliminarArchivo(){return {success:true}}

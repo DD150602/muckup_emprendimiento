@@ -1,53 +1,8 @@
-import { fetchWithAuth } from "../context/api";
-
-const BASE_URL = '/juegos';
-
-export async function guardarResultado(data) {
-    const res = await fetchWithAuth(BASE_URL, {
-        method: "POST",
-        body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Error al guardar el resultado del juego");
-    return res.json();
-}
-
-export async function actualizarResultado(id, data) {
-    const res = await fetchWithAuth(`${BASE_URL}/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Error al actualizar el resultado del juego");
-    return res.json();
-}
-
-export async function obtenerHistorialPorUsuario(idUsuario) {
-    const res = await fetchWithAuth(`${BASE_URL}/historial/${idUsuario}`);
-    if (!res.ok) throw new Error("Error al obtener el historial del usuario");
-    return res.json();
-}
-
-export async function obtenerMejoresPuntajesPorNivel(idNivel, limite = 10) {
-    const res = await fetchWithAuth(`${BASE_URL}/mejores/${idNivel}?limite=${limite}`);
-    if (!res.ok) throw new Error("Error al obtener el ranking por nivel");
-    return res.json();
-}
-
-export async function obtenerPuntajeTotalUsuario(idUsuario) {
-    const res = await fetchWithAuth(`${BASE_URL}/total/${idUsuario}`);
-    if (!res.ok) throw new Error("Error al obtener el puntaje total del usuario");
-    return res.json();
-}
-
-export async function obtenerRankingGlobal(params) {
-    let url = `${BASE_URL}/ranking`;
-
-    if (typeof params === 'object' && params.idPartida) {
-        url = `${BASE_URL}/ranking/${params.idPartida}`;
-    } else if (typeof params === 'number') {
-        url = `${BASE_URL}/ranking?limite=${params}`;
-    }
-
-    const res = await fetchWithAuth(url);
-    if (!res.ok) throw new Error("Error al obtener el ranking global");
-    return res.json();
-}
+import {readDb,updateCollection,nextId} from "./localStore";
+const deco=(r,d)=>({...r,usuario:{...r.usuario,...d.usuarios.find(x=>String(x.idUsuario)===String(r.usuario?.idUsuario))},nivel:{...r.nivel,...d.niveles.find(x=>String(x.idNivel)===String(r.nivel?.idNivel))}});
+export async function guardarResultado(d){const x={...d,idJuego:nextId(readDb().resultados,"idJuego")};updateCollection("resultados",a=>[...a,x]);return x}
+export async function actualizarResultado(id,d){let o;updateCollection("resultados",a=>a.map(x=>{if(String(x.idJuego)===String(id)){o={...x,...d};return o}return x}));return o}
+export async function obtenerHistorialPorUsuario(id){const d=readDb();return d.resultados.filter(x=>String(x.usuario?.idUsuario)===String(id)).map(x=>deco(x,d))}
+export async function obtenerMejoresPuntajesPorNivel(id,n=10){const d=readDb();return d.resultados.filter(x=>String(x.nivel?.idNivel)===String(id)).sort((a,b)=>b.puntaje-a.puntaje).slice(0,n).map(x=>deco(x,d))}
+export async function obtenerPuntajeTotalUsuario(id){return (await obtenerHistorialPorUsuario(id)).reduce((s,x)=>s+(+x.puntaje||0),0)}
+export async function obtenerRankingGlobal(p){const d=readDb();let a=[...d.resultados];if(p&&typeof p==="object"&&p.idPartida)a=a.filter(x=>x.idPartida===p.idPartida);return a.sort((x,y)=>y.puntaje-x.puntaje).slice(0,typeof p==="number"?p:10).map(x=>deco(x,d))}

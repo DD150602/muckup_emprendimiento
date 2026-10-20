@@ -1,39 +1,6 @@
-import { fetchWithAuth } from "../context/api";
-
-export async function obtenerNiveles() {
-    const res = await fetchWithAuth('/niveles-juego');
-    if (!res.ok) throw new Error("Error al obtener los niveles de juego");
-    return res.json();
-}
-
-export async function obtenerNivelPorId(id) {
-    const res = await fetchWithAuth(`/niveles-juego/${id}`);
-    if (!res.ok) throw new Error("Error al buscar el nivel de juego");
-    return res.json();
-}
-
-export async function crearNivel(data) {
-    const res = await fetchWithAuth('/niveles-juego', {
-        method: "POST",
-        body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Error al crear el nivel de juego");
-    return res.json();
-}
-
-export async function actualizarNivel(id, data) {
-    const res = await fetchWithAuth(`/niveles-juego/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-    });
-    if (!res.ok) throw new Error("Error al actualizar el nivel de juego");
-    return res.json();
-}
-
-export async function eliminarNivel(id) {
-    const res = await fetchWithAuth(`/niveles-juego/${id}`, {
-        method: "DELETE",
-    });
-    if (!res.ok) throw new Error("Error al eliminar el nivel de juego");
-    return { success: true, message: "Nivel de juego eliminado correctamente" };
-}
+import {readDb,updateCollection,nextId} from "./localStore";
+export async function obtenerNiveles(){return readDb().niveles}
+export async function obtenerNivelPorId(id){return readDb().niveles.find(x=>String(x.idNivel)===String(id))}
+export async function crearNivel(d){const x={...d,idNivel:nextId(readDb().niveles,"idNivel")};updateCollection("niveles",a=>[...a,x]);return x}
+export async function actualizarNivel(id,d){let o;updateCollection("niveles",a=>a.map(x=>{if(String(x.idNivel)===String(id)){o={...x,...d};return o}return x}));return o}
+export async function eliminarNivel(id){updateCollection("niveles",a=>a.filter(x=>String(x.idNivel)!==String(id)));return {success:true,message:"Nivel eliminado"}}

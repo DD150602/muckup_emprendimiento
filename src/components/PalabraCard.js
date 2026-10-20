@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './PalabraCard.css';
 import { useAuth } from '../context/AuthContext';
 
@@ -78,9 +78,9 @@ const PalabraCard = ({
     return (
         <div className="palabra-card">
             <div className="palabra-card-image-container">
-                <img src={imagenUrl || 'https://via.placeholder.com/400x200?text=Sin+Imagen'} alt={`Imagen de ${palabraNasa}`} className="palabra-card-image" />
+                <img src={imagenUrl || '/logo512.png'} alt={`Imagen de ${palabraNasa}`} className="palabra-card-image" />
                 {audioUrl && (
-                    <button onClick={handlePlayAudio} className="palabra-card-play-button" aria-label={`Reproducir audio de ${palabraNasa}`}>
+                    <button type='button' onClick={handlePlayAudio} className="palabra-card-play-button" aria-label={`Reproducir audio de ${palabraNasa}`}>
                         <i className={`bi ${isPlaying ? 'bi-pause-circle-fill' : 'bi-play-circle-fill'}`}></i>
                     </button>
                 )}
@@ -89,7 +89,8 @@ const PalabraCard = ({
                 <div className="palabra-card-header">
                     <h3 className="palabra-card-title">{palabraNasa}</h3>
                     {variant !== 'admin' && user && onToggleFavorito && (
-                        <button 
+              <button
+                type='button'
                             className={`palabra-card-favorite-button ${esFavorito ? 'favorited' : ''}`}
                             onClick={onToggleFavorito}
                             aria-label={esFavorito ? 'Quitar de favoritos' : 'Agregar a favoritos'}
@@ -106,14 +107,16 @@ const PalabraCard = ({
             {variant === 'admin' && (onEdit || onDelete) && (
                 <div className="card-footer bg-transparent border-top-0 p-2">
                     <div className="d-flex justify-content-end gap-3">
-                        {onEdit && <button
+              {onEdit && <button
+                type='button'
                             className="btn btn-link text-warning p-0"
                             onClick={onEdit}
                             title="Editar"
                         >
                             <i className="bi bi-pencil-fill"></i>
                         </button>}
-                        {onDelete && <button
+              {onDelete && <button
+                type='button'
                             className="btn btn-link text-danger p-0"
                             onClick={onDelete}
                             title="Eliminar"

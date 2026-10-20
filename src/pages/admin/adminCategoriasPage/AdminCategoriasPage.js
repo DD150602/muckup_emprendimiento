@@ -132,7 +132,7 @@ const AdminCategoriesPage = () => {
 
     const handleCrearCategoria = async (values, { resetForm, setSubmitting }) => {
         setLoading(true);
-        let finalValues = { ...values };
+        const finalValues = { ...values };
 
         if (selectedFile) {
             setUploading(true);
@@ -169,7 +169,7 @@ const AdminCategoriesPage = () => {
     const handleUpdateCategoria = async (values, { setSubmitting }) => {
         setLoading(true);
         setSubmitting(true);
-        let finalValues = { ...values };
+        const finalValues = { ...values };
 
         if (editSelectedFile) {
             setUploading(true);
@@ -273,7 +273,7 @@ const AdminCategoriesPage = () => {
                                         <p><strong>Imagen de la Categoría</strong></p>
                                         <div className="text-center mb-3">
                                             <img 
-                                                src={editImagePreview || currentEditCategory.imagenUrl || 'https://via.placeholder.com/150'} 
+                                                src={editImagePreview || currentEditCategory.imagenUrl || '/logo512.png'} 
                                                 alt="Imagen de la categoría" 
                                                 className="img-thumbnail" 
                                                 style={{ maxWidth: '200px', maxHeight: '200px', objectFit: 'cover' }}
@@ -447,15 +447,15 @@ const AdminCategoriesPage = () => {
                             <nav className="mt-4 d-flex justify-content-center">
                                 <ul className="pagination">
                                     <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                                        <button className="page-link" onClick={() => handlePageChange(currentPage - 1)}>Anterior</button>
+                                        <button type='button' className="page-link" onClick={() => handlePageChange(currentPage - 1)}>Anterior</button>
                                     </li>
                                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                                         <li key={page} className={`page-item ${currentPage === page ? 'active' : ''}`}>
-                                            <button className="page-link" onClick={() => handlePageChange(page)}>{page}</button>
+                                            <button type='button' className="page-link" onClick={() => handlePageChange(page)}>{page}</button>
                                         </li>
                                     ))}
                                     <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                                        <button className="page-link" onClick={() => handlePageChange(currentPage + 1)}>Siguiente</button>
+                                        <button type='button' className="page-link" onClick={() => handlePageChange(currentPage + 1)}>Siguiente</button>
                                     </li>
                                 </ul>
                             </nav>

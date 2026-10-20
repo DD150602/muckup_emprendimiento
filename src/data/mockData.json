@@ -1,0 +1,235 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "idCategoria": 1,
+      "nombre": "Naturaleza",
+      "descripcion": "Territorio, plantas y clima.",
+      "imagenUrl": "/logo512.png"
+    },
+    {
+      "id": 2,
+      "idCategoria": 2,
+      "nombre": "Familia",
+      "descripcion": "Vocabulario de familia.",
+      "imagenUrl": "/logo512.png"
+    },
+    {
+      "id": 3,
+      "idCategoria": 3,
+      "nombre": "Vida cotidiana",
+      "descripcion": "Palabras cotidianas.",
+      "imagenUrl": "/logo512.png"
+    },
+    {
+      "id": 4,
+      "idCategoria": 4,
+      "nombre": "Animales",
+      "descripcion": "Animales del territorio.",
+      "imagenUrl": "/logo512.png"
+    }
+  ],
+  "palabras": [
+    {
+      "idPalabra": 1,
+      "palabraNasa": "Uma",
+      "traduccion": "Agua",
+      "idCategoria": 1,
+      "fraseEjemplo": "Ejemplo de uso de Uma.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 2,
+      "palabraNasa": "Kiwe",
+      "traduccion": "Tierra",
+      "idCategoria": 1,
+      "fraseEjemplo": "Ejemplo de uso de Kiwe.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 3,
+      "palabraNasa": "Sek",
+      "traduccion": "Sol",
+      "idCategoria": 1,
+      "fraseEjemplo": "Ejemplo de uso de Sek.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 4,
+      "palabraNasa": "The'",
+      "traduccion": "Madre",
+      "idCategoria": 2,
+      "fraseEjemplo": "Ejemplo de uso de The'.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 5,
+      "palabraNasa": "Tata",
+      "traduccion": "Padre",
+      "idCategoria": 2,
+      "fraseEjemplo": "Ejemplo de uso de Tata.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 6,
+      "palabraNasa": "Piya",
+      "traduccion": "Casa",
+      "idCategoria": 3,
+      "fraseEjemplo": "Ejemplo de uso de Piya.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 7,
+      "palabraNasa": "Ksxaw",
+      "traduccion": "Perro",
+      "idCategoria": 4,
+      "fraseEjemplo": "Ejemplo de uso de Ksxaw.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    },
+    {
+      "idPalabra": 8,
+      "palabraNasa": "E'z",
+      "traduccion": "Pájaro",
+      "idCategoria": 4,
+      "fraseEjemplo": "Ejemplo de uso de E'z.",
+      "imagenUrl": "/logo512.png",
+      "audioUrl": ""
+    }
+  ],
+  "niveles": [
+    {
+      "idNivel": 1,
+      "nombre": "Explorador",
+      "descripcion": "Reconoce palabras esenciales.",
+      "orden": 1,
+      "estado": "activo"
+    },
+    {
+      "idNivel": 2,
+      "nombre": "Caminante",
+      "descripcion": "Amplía tu vocabulario.",
+      "orden": 2,
+      "estado": "activo"
+    },
+    {
+      "idNivel": 3,
+      "nombre": "Sabedor",
+      "descripcion": "Próximamente.",
+      "orden": 3,
+      "estado": "proximamente"
+    }
+  ],
+  "preguntas": [
+    {
+      "idPregunta": 1,
+      "preguntaTexto": "¿Qué significa Uma?",
+      "opcion1": "Agua",
+      "opcion2": "Tierra",
+      "opcion3": "Sol",
+      "opcion4": "Casa",
+      "respuestaCoreccta": "Agua",
+      "idPalabra": 1,
+      "idNivel": 1,
+      "tipo_pregunta": "imagen",
+      "xpValor": 10
+    },
+    {
+      "idPregunta": 2,
+      "preguntaTexto": "¿Qué significa Kiwe?",
+      "opcion1": "Kiwe",
+      "opcion2": "Uma",
+      "opcion3": "Piya",
+      "opcion4": "Sek",
+      "respuestaCoreccta": "Kiwe",
+      "idPalabra": 2,
+      "idNivel": 1,
+      "tipo_pregunta": "imagen",
+      "xpValor": 10
+    },
+    {
+      "idPregunta": 3,
+      "preguntaTexto": "¿Qué significa Piya?",
+      "opcion1": "Casa",
+      "opcion2": "Perro",
+      "opcion3": "Madre",
+      "opcion4": "Pájaro",
+      "respuestaCoreccta": "Casa",
+      "idPalabra": 6,
+      "idNivel": 1,
+      "tipo_pregunta": "imagen",
+      "xpValor": 10
+    },
+    {
+      "idPregunta": 4,
+      "preguntaTexto": "¿Qué significa Ksxaw?",
+      "opcion1": "Perro",
+      "opcion2": "Pájaro",
+      "opcion3": "Casa",
+      "opcion4": "Agua",
+      "respuestaCoreccta": "Perro",
+      "idPalabra": 7,
+      "idNivel": 2,
+      "tipo_pregunta": "imagen",
+      "xpValor": 10
+    }
+  ],
+  "usuarios": [
+    {
+      "idUsuario": 1,
+      "nombre": "María Fernanda",
+      "correo": "maria@demo.com",
+      "contrasena": "demo123",
+      "rol": "USUARIO"
+    },
+    {
+      "idUsuario": 2,
+      "nombre": "Juan David",
+      "correo": "juan@demo.com",
+      "contrasena": "demo123",
+      "rol": "USUARIO"
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "Admin Demo",
+      "correo": "admin@demo.com",
+      "contrasena": "admin123",
+      "rol": "ADMIN"
+    }
+  ],
+  "resultados": [
+    {
+      "idJuego": 1,
+      "puntaje": 80,
+      "preguntasCorrectas": 8,
+      "totalPreguntas": 10,
+      "usuario": { "idUsuario": 1 },
+      "nivel": { "idNivel": 1 },
+      "fechaJuego": "2026-10-18 14:20:00",
+      "idPartida": "demo-1"
+    },
+    {
+      "idJuego": 2,
+      "puntaje": 70,
+      "preguntasCorrectas": 7,
+      "totalPreguntas": 10,
+      "usuario": { "idUsuario": 2 },
+      "nivel": { "idNivel": 1 },
+      "fechaJuego": "2026-10-19 10:15:00",
+      "idPartida": "demo-2"
+    }
+  ],
+  "favoritos": [
+    {
+      "idFavorito": 1,
+      "usuario": { "idUsuario": 1 },
+      "palabra": { "idPalabra": 1, "palabraNasa": "Uma", "traduccion": "Agua" }
+    }
+  ]
+}

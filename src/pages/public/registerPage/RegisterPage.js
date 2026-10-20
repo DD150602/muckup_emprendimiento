@@ -15,7 +15,7 @@ export default function RegisterPage() {
   const { addToast } = useToast();
   const navigate = useNavigate();
 
-  const registerImage = "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/img%2Fa38-4.png?alt=media&token=34137846-3866-43ef-a8c7-f7361c16f065";
+  const registerImage = "/logo512.png";
 
   useEffect(() => {
     const img = new Image();

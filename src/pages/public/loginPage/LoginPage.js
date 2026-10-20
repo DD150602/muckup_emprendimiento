@@ -16,7 +16,7 @@ export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const loginImage = "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/img%2Fse%C3%B1ora%20de%20la%20comunidad%20nasa.jpg?alt=media&token=2fa209cd-6baa-49b7-8823-4c16415b52d5";
+  const loginImage = "/logo512.png";
 
   useEffect(() => {
     const img = new Image();

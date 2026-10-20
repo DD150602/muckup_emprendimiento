@@ -4,14 +4,14 @@ import Loader from "../../../components/ui/Loader/Loader";
 import './InicioPage.css';
 
 const carouselImages = [
-  "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/carrusel%2Fnasa%20yuwe%201.jpeg?alt=media&token=d346ab96-f9a3-4d26-aeda-bef358d83f0a",
-  "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/carrusel%2Fnasa%20yuwe%202.jpeg?alt=media&token=0cacf124-4d90-429d-ab84-6207bec42b83",
-  "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/carrusel%2Fnasa%20yuwe%203.jpeg?alt=media&token=15323af0-a5cd-44e7-ae55-13ab50ed5baf"
+  "/logo512.png",
+  "/logo512.png",
+  "/logo512.png"
 ];
 
 const otherImages = [
-  "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/img%2Faprender.png?alt=media&token=6363ba3d-7dba-450c-990b-741777590f39",
-  "https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/img%2Fpreservar.png?alt=media&token=257b52a7-68bc-4a13-9a1c-e1e3331782e5"
+  "/logo512.png",
+  "/logo512.png"
 ];
 
 const allImages = [...carouselImages, ...otherImages];
@@ -97,6 +97,7 @@ export default function InicioPage() {
         <div className="carousel-dots">
           {carouselImages.map((_, index) => (
             <button
+              type='button'
               key={index}
               className={`dot ${index === currentImageIndex ? 'active' : ''}`}
               onClick={() => goToImage(index)}
@@ -148,7 +149,7 @@ export default function InicioPage() {
           </p>
         </div>
         <div className="info-image-container">
-          <img src="https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/img%2Faprender.png?alt=media&token=6363ba3d-7dba-450c-990b-741777590f39" alt="Ilustración sobre aprender Nasa Yuwe" />
+          <img src="/logo512.png" alt="Ilustración sobre aprender Nasa Yuwe" />
         </div>
       </section>
       <section className="info-section-row reverse-order-desktop">
@@ -160,7 +161,7 @@ export default function InicioPage() {
           </p>
         </div>
         <div className="info-image-container">
-          <img src="https://firebasestorage.googleapis.com/v0/b/yuwelongo.firebasestorage.app/o/img%2Fpreservar.png?alt=media&token=257b52a7-68bc-4a13-9a1c-e1e3331782e5" alt="Ilustración sobre preservar lenguas indígenas" />
+          <img src="/logo512.png" alt="Ilustración sobre preservar lenguas indígenas" />
         </div>
       </section>
       </div>
