@@ -15,7 +15,7 @@ export default function RegisterPage() {
   const { addToast } = useToast();
   const navigate = useNavigate();
 
-  const registerImage = "/logo512.png";
+  const registerImage = "/logo512.webp";
 
   useEffect(() => {
     const img = new Image();

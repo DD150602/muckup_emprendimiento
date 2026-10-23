@@ -1,7 +1,7 @@
 import './AdminCategoriaCard.css';
 
 const AdminCategoriaCard = ({ category, onEdit, onDelete, loading }) => {
-    const placeholderImage = '/logo512.png';
+    const placeholderImage = '/logo512.webp';
 
     return (
         <div className="col admin-category-card-enter mb-3">

@@ -4,14 +4,14 @@ import Loader from "../../../components/ui/Loader/Loader";
 import './InicioPage.css';
 
 const carouselImages = [
-  "/logo512.png",
-  "/logo512.png",
-  "/logo512.png"
+  "/logo512.webp",
+  "/logo512.webp",
+  "/logo512.webp"
 ];
 
 const otherImages = [
-  "/logo512.png",
-  "/logo512.png"
+  "/logo512.webp",
+  "/logo512.webp"
 ];
 
 const allImages = [...carouselImages, ...otherImages];
@@ -88,7 +88,7 @@ export default function InicioPage() {
           ))}
         </div>
         <div className="hero-content">
-          <h1>¡Bienvenido a YuweLongo!</h1>
+          <h1>¡Bienvenido a RAÍZA!</h1>
           <p>Tu plataforma para aprender la lengua Nasa Yuwe y practicar. Sumérgete en nuestro diccionario.</p>
           <div className="cta-buttons">
             <Link to="/diccionario" className="btn btn-primary">Explora el Diccionario</Link>
@@ -149,7 +149,7 @@ export default function InicioPage() {
           </p>
         </div>
         <div className="info-image-container">
-          <img src="/logo512.png" alt="Ilustración sobre aprender Nasa Yuwe" />
+          <img src="/logo512.webp" alt="Ilustración sobre aprender Nasa Yuwe" />
         </div>
       </section>
       <section className="info-section-row reverse-order-desktop">
@@ -161,7 +161,7 @@ export default function InicioPage() {
           </p>
         </div>
         <div className="info-image-container">
-          <img src="/logo512.png" alt="Ilustración sobre preservar lenguas indígenas" />
+          <img src="/logo512.webp" alt="Ilustración sobre preservar lenguas indígenas" />
         </div>
       </section>
       </div>

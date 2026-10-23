@@ -273,7 +273,7 @@ const AdminCategoriesPage = () => {
                                         <p><strong>Imagen de la Categoría</strong></p>
                                         <div className="text-center mb-3">
                                             <img 
-                                                src={editImagePreview || currentEditCategory.imagenUrl || '/logo512.png'} 
+                                                src={editImagePreview || currentEditCategory.imagenUrl || '/logo512.webp'} 
                                                 alt="Imagen de la categoría" 
                                                 className="img-thumbnail" 
                                                 style={{ maxWidth: '200px', maxHeight: '200px', objectFit: 'cover' }}

@@ -1,4 +1,4 @@
-# YuweLongo - Frontend
+# RAÍZA - Frontend
 
 [![Estado del Proyecto](https://img.shields.io/badge/estado-en%20desarrollo-yellowgreen)](https://github.com/moonthang/yuwelongo-frontend)
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=white)](https://react.dev/)
@@ -7,7 +7,7 @@
 
 ## 🚀 Descripción del Proyecto
 
-**YuweLongo** es un diccionario interactivo sobre la lengua indígena **Nasa Yuwe**, acompañado de un **juego educativo**.  
+**RAÍZA** es un diccionario interactivo sobre la lengua indígena **Nasa Yuwe**, acompañado de un **juego educativo**.  
 
 El frontend está construido con **React** y **Create React App**.  
 Se conecta con un **Backend Java (Jakarta EE / Servlets)** que maneja la autenticación mediante **JWT** (JSON Web Tokens).
@@ -112,7 +112,7 @@ Sigue estos pasos para configurar el proyecto localmente:
 
 ## 👨‍💻 Autores
 
-**YuweLongo - Frontend** fue desarrollado por **Miguel Angel Sepulveda Burgos** y **Faeli Yobana Nez Fiole**.
+**RAÍZA - Frontend** fue desarrollado por **Miguel Angel Sepulveda Burgos** y **Faeli Yobana Nez Fiole**.
 
 *   <img src="https://cdn.worldvectorlogo.com/logos/github-icon-2.svg" width="20" height="20"/> GitHub: [@moonthang](https://github.com/moonthang)
 *   <img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" width="20" height="20"/> LinkedIn: [Miguel Ángel Sepulveda Burgos](https://www.linkedin.com/in/miguel-%C3%A1ngel-sep%C3%BAlveda-burgos-a87808167/)

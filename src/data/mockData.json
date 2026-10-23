@@ -5,28 +5,28 @@
       "idCategoria": 1,
       "nombre": "Naturaleza",
       "descripcion": "Territorio, plantas y clima.",
-      "imagenUrl": "/logo512.png"
+      "imagenUrl": "/logo512.webp"
     },
     {
       "id": 2,
       "idCategoria": 2,
       "nombre": "Familia",
       "descripcion": "Vocabulario de familia.",
-      "imagenUrl": "/logo512.png"
+      "imagenUrl": "/logo512.webp"
     },
     {
       "id": 3,
       "idCategoria": 3,
       "nombre": "Vida cotidiana",
       "descripcion": "Palabras cotidianas.",
-      "imagenUrl": "/logo512.png"
+      "imagenUrl": "/logo512.webp"
     },
     {
       "id": 4,
       "idCategoria": 4,
       "nombre": "Animales",
       "descripcion": "Animales del territorio.",
-      "imagenUrl": "/logo512.png"
+      "imagenUrl": "/logo512.webp"
     }
   ],
   "palabras": [
@@ -36,7 +36,7 @@
       "traduccion": "Agua",
       "idCategoria": 1,
       "fraseEjemplo": "Ejemplo de uso de Uma.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -45,7 +45,7 @@
       "traduccion": "Tierra",
       "idCategoria": 1,
       "fraseEjemplo": "Ejemplo de uso de Kiwe.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -54,7 +54,7 @@
       "traduccion": "Sol",
       "idCategoria": 1,
       "fraseEjemplo": "Ejemplo de uso de Sek.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -63,7 +63,7 @@
       "traduccion": "Madre",
       "idCategoria": 2,
       "fraseEjemplo": "Ejemplo de uso de The'.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -72,7 +72,7 @@
       "traduccion": "Padre",
       "idCategoria": 2,
       "fraseEjemplo": "Ejemplo de uso de Tata.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -81,7 +81,7 @@
       "traduccion": "Casa",
       "idCategoria": 3,
       "fraseEjemplo": "Ejemplo de uso de Piya.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -90,7 +90,7 @@
       "traduccion": "Perro",
       "idCategoria": 4,
       "fraseEjemplo": "Ejemplo de uso de Ksxaw.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     },
     {
@@ -99,7 +99,7 @@
       "traduccion": "Pájaro",
       "idCategoria": 4,
       "fraseEjemplo": "Ejemplo de uso de E'z.",
-      "imagenUrl": "/logo512.png",
+      "imagenUrl": "/logo512.webp",
       "audioUrl": ""
     }
   ],

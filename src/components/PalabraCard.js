@@ -16,7 +16,6 @@ const PalabraCard = ({
         palabraNasa,
         traduccion,
         fraseEjemplo,
-        imagenUrl,
         audioUrl,
         fecha_creacion,
         fecha_actualizacion,
@@ -78,7 +77,7 @@ const PalabraCard = ({
     return (
         <div className="palabra-card">
             <div className="palabra-card-image-container">
-                <img src={imagenUrl || '/logo512.png'} alt={`Imagen de ${palabraNasa}`} className="palabra-card-image" />
+                <img src='/logo512.webp' alt={`Imagen de ${palabraNasa}`} className="palabra-card-image" />
                 {audioUrl && (
                     <button type='button' onClick={handlePlayAudio} className="palabra-card-play-button" aria-label={`Reproducir audio de ${palabraNasa}`}>
                         <i className={`bi ${isPlaying ? 'bi-pause-circle-fill' : 'bi-play-circle-fill'}`}></i>

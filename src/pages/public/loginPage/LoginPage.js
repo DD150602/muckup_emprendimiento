@@ -16,7 +16,7 @@ export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const loginImage = "/logo512.png";
+  const loginImage = "/logo512.webp";
 
   useEffect(() => {
     const img = new Image();

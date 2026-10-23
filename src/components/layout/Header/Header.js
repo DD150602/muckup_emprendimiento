@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import './Header.css';
@@ -17,8 +16,8 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div className="container-fluid">
           <Link className="navbar-brand d-flex align-items-center fw-bold" to="/">
-            <img src="/logo192.png" alt="YuweLongo Logo" className="header-logo me-2" />
-            Yuwelongo
+            <img src="/logo192.webp" alt="RAÍZA Logo" className="header-logo me-2" />
+            RAÍZA
           </Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -70,7 +69,7 @@ export default function Header() {
                       </>
                     )}
 
-                    <li><button className="dropdown-item text-danger" onClick={handleLogout}><i className="bi bi-box-arrow-right me-1"></i>Cerrar Sesión</button></li>
+                    <li><button type="button" className="dropdown-item text-danger" onClick={handleLogout}><i className="bi bi-box-arrow-right me-1"></i>Cerrar Sesión</button></li>
                   </ul>
                 </li>
               )}

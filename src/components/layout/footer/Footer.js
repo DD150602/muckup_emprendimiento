@@ -13,10 +13,10 @@ const Footer = () => {
             <i className="bi bi-github"></i>
           </a>
         </div>
-        <p>
-          &copy; {new Date().getFullYear()} YuweLongo. Desarrollado por Miguel Angel Sepulveda Burgos y Faeli Yobana Nez
+        {/* <p>
+          &copy; {new Date().getFullYear()} RAÍZA. Desarrollado por Miguel Angel Sepulveda Burgos y Faeli Yobana Nez
           Fiole.
-        </p>
+        </p>*/}
       </div>
     </footer>
   );
